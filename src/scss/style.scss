@@ -7,6 +7,8 @@
 body {
     width: 100%;
     height: 100%;
+    max-width: 750px;
+    min-width: 320px;
 }
 
 .wrap {
@@ -70,6 +72,14 @@ body {
 .sublist {
     width: 100%;
     height: auto;
+    position: relative;
+    >img {
+        position: absolute;
+        top: 50%;
+        margin-top: -.45rem;
+        left: 50%;
+        margin-left: -.78rem;
+    }
     ul {
         width: 100%;
         display: flex;

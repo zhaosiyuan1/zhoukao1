@@ -20,11 +20,15 @@ gulp.task('devScss', function() {
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'Android >=4.0']
         }))
+        .pipe(cleanCss())
         .pipe(gulp.dest('src/css'))
 });
 // 编译js
 gulp.task('devJS', function() {
-    gulp.src(['./src/js/*.js'], ['!./src/js/*.min.js'])
+    gulp.src(['./src/js/*.js', '!./src/js/*.min.js'])
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(uglify())
         .pipe(gulp.dest('src/js'))
 });
@@ -62,4 +66,39 @@ gulp.task('copyHtml', function() {
         .pipe(gulp.dest('src'));
 });
 // 用一个任务来代替 server 和 watch
-gulp.task('dev', ['server', 'watch']);
+gulp.task('dev', ['server', 'watch', 'devJS', 'copyHtml']);
+
+
+// 上线环境
+// 打包 css
+gulp.task('buildScss', function() {
+    gulp.src('./src/css/*.css')
+        .pipe(gulp.dest('build/css'))
+});
+// 打包 data
+gulp.task('buildData', function() {
+    gulp.src('./src/data/*.json')
+        .pipe(gulp.dest('build/data'));
+});
+// 打包 fonts
+gulp.task('buildFonts', function() {
+    gulp.src('./src/fonts/*')
+        .pipe(gulp.dest('build/fonts'))
+});
+// 打包 imags
+gulp.task('buildImg', function() {
+    gulp.src('./src/images/*.{png,jpg,gif}')
+        .pipe(gulp.dest('build/images'));
+});
+// 打包 js
+gulp.task('buildJS', function() {
+    gulp.src('./src/js/*')
+        .pipe(gulp.dest('build/js'))
+});
+// 打包 html
+gulp.task('buildHtml', function() {
+    gulp.src('./src/**/*.html')
+        .pipe(gulp.dest('build'))
+});
+// 用一个命令打包所有
+gulp.task('build', ['buildScss', 'buildData', 'buildFonts', 'buildImg', 'buildJS', 'buildHtml']);
