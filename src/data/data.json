@@ -1,0 +1,60 @@
+{
+    "nav": [{
+            "img": "./images/a1.png",
+            "title1": "换轮胎",
+            "tag": "精选匹配"
+        },
+        {
+            "img": "./images/a2.png",
+            "title1": "做保养",
+            "tag": "精确匹配"
+        },
+        {
+            "img": "./images/a3.png",
+            "title1": "洗车",
+            "tag": "优质服务"
+        },
+        {
+            "img": "./images/a4.png",
+            "title1": "领红包",
+            "tag": "免费天天送"
+        }
+    ],
+    "sublist": [{
+        "img": "./images/b1.png",
+        "title": "自助小保养"
+    }, {
+        "img": "./images/b2.png",
+        "title": "大保养"
+    }, {
+        "img": "./images/b3.png",
+        "title": "爆款轮胎直降"
+    }, {
+        "img": "./images/b4.png",
+        "title": "刹车片"
+    }, {
+        "img": "./images/b5.png",
+        "title": "爆款记录仪"
+    }, {
+        "img": "./images/b1.png",
+        "title": "刹车片"
+    }, {
+        "img": "./images/b1.png",
+        "title": "爆款轮胎直降"
+    }, {
+        "img": "./images/b1.png",
+        "title": "爆款"
+    }, {
+        "img": "./images/b1.png",
+        "title": "自助小保养"
+    }, {
+        "img": "./images/b1.png",
+        "title": "爆款记录仪"
+    }, {
+        "img": "./images/b1.png",
+        "title": "自助小保养"
+    }, {
+        "img": "./images/b12.png",
+        "title": "更多自助小保养"
+    }]
+}
